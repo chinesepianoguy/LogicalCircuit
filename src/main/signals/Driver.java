@@ -28,7 +28,7 @@ public class Driver {
 
     /**
      * Consultation of the moment when the event occurs
-     * @return the moment ou -1 if the event queue is empty
+     * @return the moment or -1 if the event queue is empty
      * */
     public int timeOfEvent() {
         return (events.peek() == null) ? -1 : events.peek().getTime();
