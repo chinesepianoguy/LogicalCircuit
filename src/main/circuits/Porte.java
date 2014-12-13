@@ -7,14 +7,14 @@ import main.signals.Signal;
  */
 public abstract class Porte {
 
-    private Signal entree1, entree2, sortie;
+    protected Signal sortie;
+    protected int retard;
 
-    public Porte(Signal entree1, Signal entree2, Signal sortie){
-        this.entree1 = entree1;
-        this.entree2 = entree2;
+    public Porte(Signal sortie, int retard){
         this.sortie = sortie;
+        this.retard = retard;
     }
 
-    public abstract void calSortie();
+    public abstract void activate();
 
 }
