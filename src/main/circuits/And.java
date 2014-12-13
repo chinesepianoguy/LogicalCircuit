@@ -9,12 +9,23 @@ import main.signals.Signal;
  */
 public class And extends PorteADeuxEntrees {
 
+    /**
+     * Constructor
+     * Initialize the inputs, output and delay of this AND gate
+     * @param entree1
+     * @param entree2
+     * @param sortie
+     * @param retard
+     */
     public And(Signal entree1, Signal entree2, Signal sortie, int retard) {
         super(entree1, entree2, sortie, retard);
     }
 
+    /**
+     * Calculate the output of this AND gate
+     */
     @Override
-    public void activate(){
+    public void activate() {
         if (sortie.getValue() != entree1.getValue() && entree2.getValue()) {
             sortie.addEvent(
                     new Event(

@@ -16,6 +16,7 @@ public class Horloge {
 
     /**
      * Get the latest simulating moment
+     *
      * @return simTime
      */
     public static int top() {

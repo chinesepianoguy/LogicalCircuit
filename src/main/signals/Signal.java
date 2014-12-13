@@ -11,6 +11,7 @@ public class Signal {
     /**
      * Constructor
      * Initialize the current value of a signal and its driver
+     *
      * @param value the value of current stimuli
      */
     public Signal(boolean value) {

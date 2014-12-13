@@ -10,7 +10,8 @@ public class Event {
 
     /**
      * Constructor
-     * @param time the moment when this even occurs
+     *
+     * @param time  the moment when this even occurs
      * @param value the updating value of the signal
      */
     public Event(int time, boolean value) {
@@ -20,6 +21,7 @@ public class Event {
 
     /**
      * Getter of value
+     *
      * @return value
      */
     public boolean getValue() {
@@ -28,6 +30,7 @@ public class Event {
 
     /**
      * Getter of time
+     *
      * @return time
      */
     public int getTime() {

@@ -1,10 +1,9 @@
 package main.circuits;
 
+import main.signals.Horloge;
 import main.signals.Signal;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by King on 2014-12-13.
@@ -14,37 +13,73 @@ public class Circuit {
     private ArrayList<Porte> portes;
     private ArrayList<Signal> signals;
 
-    public Circuit(){
+    /**
+     * Constructor
+     * Initialize the portes and signals
+     */
+    public Circuit() {
         portes = new ArrayList<Porte>();
         signals = new ArrayList<Signal>();
     }
 
-    public void addSignal(Signal s){
+    /**
+     * Add a signal to the circuit
+     * @param s the signal to add
+     */
+    public void addSignal(Signal s) {
         signals.add(s);
     }
 
-    public void addPorte(Porte p){
+    /**
+     * Add a gate to the circuit
+     * @param p the gate to add
+     */
+    public void addPorte(Porte p) {
         portes.add(p);
     }
 
-    /*public void simule(int tMax){
-
-    }*/
-
-    public void actualiseSignals(){
-        for (Signal s : signals){
+    /**
+     * Update all the signals of the circuit
+     */
+    public void actualiseSignals() {
+        for (Signal s : signals) {
             s.actualise();
         }
     }
 
-    public void activatePortes(){
-        for (Porte p : portes){
+    /**
+     * Activate all the gates of the circuit
+     */
+    public void activatePortes() {
+        for (Porte p : portes) {
             p.activate();
         }
     }
 
-    public ArrayList<Signal> getSignals(){
+    /**
+     * Getter of all the signals of the circuits
+     * @return
+     */
+    public ArrayList<Signal> getSignals() {
         return signals;
+    }
+
+    /**
+     * Simulation of this circuit
+     * @param tMax max time of simulation
+     */
+    public void simule(int tMax){
+        Horloge.reset();
+        for (int i = 0; i < tMax; i++) {
+            actualiseSignals();
+            activatePortes();
+            System.out.print(Horloge.top());
+            for (Signal s : getSignals()) {
+                System.out.print("\t" + s.getValue());
+            }
+            System.out.println();
+            Horloge.increment();
+        }
     }
 
 }

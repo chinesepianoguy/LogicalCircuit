@@ -5,7 +5,6 @@ import main.circuits.Circuit;
 import main.circuits.Or;
 import main.circuits.Porte;
 import main.signals.Event;
-import main.signals.Horloge;
 import main.signals.Signal;
 
 /**
@@ -13,7 +12,11 @@ import main.signals.Signal;
  */
 public class TestCircuit {
 
+    /**
+     * Run the simulation of the circuit
+     */
     public static void runTest(){
+        // definition of a circuit and declaration of the signals
         Circuit c = new Circuit();
         Signal  s1 = new Signal(false),
                 s2 = new Signal(false),
@@ -21,35 +24,30 @@ public class TestCircuit {
                 s4 = new Signal(false),
                 s5 = new Signal(false);
 
+        // definition of the stimuli in the signals of inputs s1, s2 et s4
         s1.addEvent(new Event(3, true));
         s2.addEvent(new Event(7, true));
         s4.addEvent(new Event(4, true));
+        // ...add some others events
 
+        // add the signals in the list of the signals of the circuit
         c.addSignal(s1);
         c.addSignal(s2);
         c.addSignal(s3);
         c.addSignal(s4);
         c.addSignal(s5);
 
+        // declaration of the gates
         Porte p1 = new And(s1, s2, s3, 1);
-        Porte p2 = new Or(s3, s4, s5, 2);
+        Porte p2 = new Or(s3, s4, s5, 1);
 
+        // add the gates to the circuit
         c.addPorte(p1);
         c.addPorte(p2);
 
+        // simulation
         int tMax = 100;
-
-        Horloge.reset();
-        for (int i = 0; i < tMax; i++) {
-            c.actualiseSignals();
-            c.activatePortes();
-            System.out.print(Horloge.top());
-            for (Signal s : c.getSignals()) {
-                System.out.print("\t" + s.getValue());
-            }
-            System.out.println();
-            Horloge.increment();
-        }
+        c.simule(tMax);
     }
 
 }

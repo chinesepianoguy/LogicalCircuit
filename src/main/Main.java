@@ -1,7 +1,6 @@
 package main;
 
 import test.TestCircuit;
-import test.TestSignal;
 
 public class Main {
 

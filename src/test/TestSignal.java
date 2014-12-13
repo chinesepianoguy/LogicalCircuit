@@ -10,7 +10,7 @@ import main.signals.Signal;
 public class TestSignal {
 
     /**
-     * Test of signal simulation
+     * Test of signal simulation of the signal
      */
     public static void runTest(){
         // declare a signal and assignment of input stimuli
