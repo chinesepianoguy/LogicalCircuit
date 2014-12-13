@@ -38,8 +38,8 @@ public class TestCircuit {
         c.addSignal(s5);
 
         // declaration of the gates
-        Gate g1 = new And(s1, s2, s3, 1);
-        Gate g2 = new Or(s3, s4, s5, 1);
+        Gate    g1 = new And(s1, s2, s3, 1),
+                g2 = new Or(s3, s4, s5, 1);
 
         // add the gates to the circuit
         c.addPorte(g1);
