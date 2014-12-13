@@ -12,7 +12,7 @@ public abstract class Gate {
 
     /**
      * Constructor
-     * Initialize the output and the delay of the gate
+     * Initialize the output and the delay of this gate
      *
      * @param output the output of the gate
      * @param delay  the delay of the gate

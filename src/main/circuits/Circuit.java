@@ -15,7 +15,7 @@ public class Circuit {
 
     /**
      * Constructor
-     * Initialize the gates and signals
+     * Initialize gates and signals
      */
     public Circuit() {
         gates = new ArrayList<Gate>();
@@ -41,7 +41,7 @@ public class Circuit {
     }
 
     /**
-     * Update all the signals of the circuit
+     * Update all signals of the circuit
      */
     public void actualizeSignals() {
         for (Signal signal : signals) {
@@ -50,7 +50,7 @@ public class Circuit {
     }
 
     /**
-     * Activate all the gates of the circuit
+     * Activate all gates of the circuit
      */
     public void activateGates() {
         for (Gate gate : gates) {
@@ -59,7 +59,7 @@ public class Circuit {
     }
 
     /**
-     * Getter of all the signals of the circuits
+     * Getter of all signals of the circuits
      *
      * @return all signals in a list form
      */

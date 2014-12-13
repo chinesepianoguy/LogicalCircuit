@@ -24,24 +24,24 @@ public class TestCircuit {
                 s4 = new Signal(false),
                 s5 = new Signal(false);
 
-        // definition of the stimuli in the signals of inputs s1, s2 et s4
+        // definition of the stimuli in the signals of inputs s1, s2 and s4
         s1.addEvent(new Event(3, true));
         s2.addEvent(new Event(7, true));
         s4.addEvent(new Event(4, true));
         // ...add some others events
 
-        // add the signals in the list of the signals of the circuit
+        // add signals to the circuit
         c.addSignal(s1);
         c.addSignal(s2);
         c.addSignal(s3);
         c.addSignal(s4);
         c.addSignal(s5);
 
-        // declaration of the gates
+        // declaration of gates
         Gate    g1 = new And(s1, s2, s3, 1),
                 g2 = new Or(s3, s4, s5, 1);
 
-        // add the gates to the circuit
+        // add gates to the circuit
         c.addGate(g1);
         c.addGate(g2);
 

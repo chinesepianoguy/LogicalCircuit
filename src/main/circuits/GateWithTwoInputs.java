@@ -11,7 +11,7 @@ public abstract class GateWithTwoInputs extends Gate {
 
     /**
      * Constructor
-     * Initialize the inputs, output and delay of the gate
+     * Initialize the inputs, output and delay of this gate
      *
      * @param input1 the first input
      * @param input2 the second input
