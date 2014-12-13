@@ -38,7 +38,7 @@ public class Signal {
     /**
      * Update the value of the signal if an event occurs.
      */
-    public void actualise() {
+    public void actualize() {
         if (driver.timeOfEvent() != -1 && driver.timeOfEvent() == Clock.top()) {
             value = driver.pollEvent().getValue();
         }

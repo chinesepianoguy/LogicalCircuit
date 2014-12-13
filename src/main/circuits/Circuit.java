@@ -36,16 +36,16 @@ public class Circuit {
      *
      * @param p the gate to add
      */
-    public void addPorte(Gate p) {
+    public void addGate(Gate p) {
         gates.add(p);
     }
 
     /**
      * Update all the signals of the circuit
      */
-    public void actualiseSignals() {
+    public void actualizeSignals() {
         for (Signal signal : signals) {
-            signal.actualise();
+            signal.actualize();
         }
     }
 
@@ -75,7 +75,7 @@ public class Circuit {
     public void simulate(int tMax) {
         Clock.reset();
         for (int i = 0; i < tMax; i++) {
-            actualiseSignals();
+            actualizeSignals();
             activateGates();
             System.out.print(Clock.top());
             for (Signal s : getSignals()) {

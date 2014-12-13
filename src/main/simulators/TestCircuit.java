@@ -42,8 +42,8 @@ public class TestCircuit {
                 g2 = new Or(s3, s4, s5, 1);
 
         // add the gates to the circuit
-        c.addPorte(g1);
-        c.addPorte(g2);
+        c.addGate(g1);
+        c.addGate(g2);
 
         // simulation
         int tMax = 100;

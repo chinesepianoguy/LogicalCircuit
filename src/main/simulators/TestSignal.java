@@ -22,7 +22,7 @@ public class TestSignal {
         Clock.reset();
         int n = 100;
         for (int i = 0; i < n; i++) {
-            s.actualise();
+            s.actualize();
             System.out.println(
                     "Au temps\t["
                     + Clock.top() + "],\tla valeur du signal est\t["
