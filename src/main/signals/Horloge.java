@@ -9,7 +9,7 @@ public class Horloge {
 
     /**
      * Reset the simulating moments
-     * */
+     */
     public static void reset() {
         simTime = 0;
     }
@@ -17,14 +17,14 @@ public class Horloge {
     /**
      * Get the latest simulating moment
      * @return simTime
-     * */
+     */
     public static int top() {
         return simTime;
     }
 
     /**
      * An increment of the simulating time
-     * */
+     */
     public static void increment() {
         simTime++;
     }

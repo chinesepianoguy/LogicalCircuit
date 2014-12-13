@@ -11,7 +11,7 @@ public class TestSignal {
 
     /**
      * Test of signal simulation
-     * */
+     */
     public static void runTest(){
         // declare a signal and assignment of input stimuli
         Signal s = new Signal(false);
