@@ -1,9 +1,9 @@
-package test;
+package main.simulators;
 
 import main.circuits.And;
 import main.circuits.Circuit;
+import main.circuits.Gate;
 import main.circuits.Or;
-import main.circuits.Porte;
 import main.signals.Event;
 import main.signals.Signal;
 
@@ -38,8 +38,8 @@ public class TestCircuit {
         c.addSignal(s5);
 
         // declaration of the gates
-        Porte p1 = new And(s1, s2, s3, 1);
-        Porte p2 = new Or(s3, s4, s5, 1);
+        Gate p1 = new And(s1, s2, s3, 1);
+        Gate p2 = new Or(s3, s4, s5, 1);
 
         // add the gates to the circuit
         c.addPorte(p1);
@@ -47,7 +47,7 @@ public class TestCircuit {
 
         // simulation
         int tMax = 100;
-        c.simule(tMax);
+        c.simulate(tMax);
     }
 
 }

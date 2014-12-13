@@ -1,7 +1,7 @@
-package test;
+package main.simulators;
 
 import main.signals.Event;
-import main.signals.Horloge;
+import main.signals.Clock;
 import main.signals.Signal;
 
 /**
@@ -19,16 +19,16 @@ public class TestSignal {
         s.addEvent(new Event(5, false));
         s.addEvent(new Event(9, true));
         // simulation
-        Horloge.reset();
+        Clock.reset();
         int n = 100;
         for (int i = 0; i < n; i++) {
             s.actualise();
             System.out.println(
                     "Au temps\t["
-                    + Horloge.top() + "],\tla valeur du signal est\t["
+                    + Clock.top() + "],\tla valeur du signal est\t["
                     + s.getValue() + "]."
             );
-            Horloge.increment();
+            Clock.increment();
         }
     }
 

@@ -1,6 +1,6 @@
 package main.circuits;
 
-import main.signals.Horloge;
+import main.signals.Clock;
 import main.signals.Signal;
 
 import java.util.ArrayList;
@@ -10,20 +10,21 @@ import java.util.ArrayList;
  */
 public class Circuit {
 
-    private ArrayList<Porte> portes;
+    private ArrayList<Gate> gates;
     private ArrayList<Signal> signals;
 
     /**
      * Constructor
-     * Initialize the portes and signals
+     * Initialize the gates and signals
      */
     public Circuit() {
-        portes = new ArrayList<Porte>();
+        gates = new ArrayList<Gate>();
         signals = new ArrayList<Signal>();
     }
 
     /**
      * Add a signal to the circuit
+     *
      * @param s the signal to add
      */
     public void addSignal(Signal s) {
@@ -32,32 +33,34 @@ public class Circuit {
 
     /**
      * Add a gate to the circuit
+     *
      * @param p the gate to add
      */
-    public void addPorte(Porte p) {
-        portes.add(p);
+    public void addPorte(Gate p) {
+        gates.add(p);
     }
 
     /**
      * Update all the signals of the circuit
      */
     public void actualiseSignals() {
-        for (Signal s : signals) {
-            s.actualise();
+        for (Signal signal : signals) {
+            signal.actualise();
         }
     }
 
     /**
      * Activate all the gates of the circuit
      */
-    public void activatePortes() {
-        for (Porte p : portes) {
-            p.activate();
+    public void activateGates() {
+        for (Gate gate : gates) {
+            gate.activate();
         }
     }
 
     /**
      * Getter of all the signals of the circuits
+     *
      * @return all signals in a list form
      */
     public ArrayList<Signal> getSignals() {
@@ -66,19 +69,20 @@ public class Circuit {
 
     /**
      * Simulation of this circuit
+     *
      * @param tMax max time of simulation
      */
-    public void simule(int tMax){
-        Horloge.reset();
+    public void simulate(int tMax) {
+        Clock.reset();
         for (int i = 0; i < tMax; i++) {
             actualiseSignals();
-            activatePortes();
-            System.out.print(Horloge.top());
+            activateGates();
+            System.out.print(Clock.top());
             for (Signal s : getSignals()) {
                 System.out.print("\t" + s.getValue());
             }
             System.out.println();
-            Horloge.increment();
+            Clock.increment();
         }
     }
 

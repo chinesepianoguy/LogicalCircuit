@@ -28,6 +28,7 @@ public class Signal {
 
     /**
      * Add an event to driver.
+     *
      * @param event the specified event to add
      */
     public void addEvent(Event event) {
@@ -38,7 +39,7 @@ public class Signal {
      * Update the value of the signal if an event occurs.
      */
     public void actualise() {
-        if (driver.timeOfEvent() != -1 && driver.timeOfEvent() == Horloge.top()) {
+        if (driver.timeOfEvent() != -1 && driver.timeOfEvent() == Clock.top()) {
             value = driver.pollEvent().getValue();
         }
     }

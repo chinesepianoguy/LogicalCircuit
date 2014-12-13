@@ -1,33 +1,34 @@
 package main.circuits;
 
+import main.signals.Clock;
 import main.signals.Event;
-import main.signals.Horloge;
 import main.signals.Signal;
 
 /**
  * Created by King on 2014-12-13.
  */
-public class Or extends PorteADeuxEntrees {
+public class Or extends GateWithTwoInputs {
 
     /**
      * Constructor
      * Initialize the inputs, output and delay of this OR gate
-     * @param entree1 the first input
-     * @param entree2 the second input
-     * @param sortie the output
-     * @param retard the delay
+     *
+     * @param input1 the first input
+     * @param input2 the second input
+     * @param output the output
+     * @param delay  the delay
      */
-    public Or(Signal entree1, Signal entree2, Signal sortie, int retard) {
-        super(entree1, entree2, sortie, retard);
+    public Or(Signal input1, Signal input2, Signal output, int delay) {
+        super(input1, input2, output, delay);
     }
 
     @Override
     public void activate() {
-        if (sortie.getValue() != entree1.getValue() || entree2.getValue()) {
-            sortie.addEvent(
+        if (output.getValue() != input1.getValue() || input2.getValue()) {
+            output.addEvent(
                     new Event(
-                            Horloge.top() + retard,
-                            entree1.getValue() || entree2.getValue()
+                            Clock.top() + delay,
+                            input1.getValue() || input2.getValue()
                     )
             );
         }
