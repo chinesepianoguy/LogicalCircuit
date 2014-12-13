@@ -58,7 +58,7 @@ public class Circuit {
 
     /**
      * Getter of all the signals of the circuits
-     * @return
+     * @return all signals in a list form
      */
     public ArrayList<Signal> getSignals() {
         return signals;
