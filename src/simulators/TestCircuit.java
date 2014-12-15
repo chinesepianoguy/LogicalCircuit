@@ -15,7 +15,7 @@ public class TestCircuit {
     /**
      * Run the simulation of the circuit
      */
-    public static void runTest(){
+    public static void main(String[] args){
         // definition of a circuit and declaration of the signals
         Circuit c = new Circuit();
         Signal  s1 = new Signal(false),

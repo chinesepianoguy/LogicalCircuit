@@ -1,5 +1,6 @@
 package signals;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -19,12 +20,21 @@ public class Driver {
     }
 
     /**
+     * Sort the events by its ocurring moments
+     * to avoid the irrational events
+     */
+    private void organize(){
+        Collections.sort((LinkedList)events);
+    }
+
+    /**
      * Add/Insert an event to the queue (FIFO)
      *
      * @param event the event to add
      */
     public void addEvent(Event event) {
         events.offer(event);
+        organize();
     }
 
     /**

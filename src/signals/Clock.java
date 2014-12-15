@@ -5,29 +5,29 @@ package signals;
  */
 public class Clock {
 
-    private static int simTime;
+    private static int time;
 
     /**
      * Reset the simulating moments
      */
     public static void reset() {
-        simTime = 0;
+        time = 0;
     }
 
     /**
      * Get the latest simulating moment
      *
-     * @return simTime
+     * @return time
      */
     public static int top() {
-        return simTime;
+        return time;
     }
 
     /**
      * An increment of the simulating time
      */
     public static void increment() {
-        simTime++;
+        time++;
     }
 
 }

@@ -12,14 +12,14 @@ public class TestSignal {
     /**
      * Test of signal simulation of the signal
      */
-    public static void runTest(){
+    public static void main(String[] args){
         // declare a signal and assignment of input stimuli
         Signal s = new Signal(false);
-        s.addEvent(new Event(3, true));
-        s.addEvent(new Event(5, false));
+        s.addEvent(new Event(5, true));
+        s.addEvent(new Event(3, false));
         s.addEvent(new Event(9, true));
         // simulation
-        Clock.reset();
+        /*Clock.reset();
         int n = 100;
         for (int i = 0; i < n; i++) {
             s.actualize();
@@ -29,7 +29,7 @@ public class TestSignal {
                     + s.getValue() + "]."
             );
             Clock.increment();
-        }
+        }*/
     }
 
 }
