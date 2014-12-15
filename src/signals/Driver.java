@@ -20,7 +20,7 @@ public class Driver {
     }
 
     /**
-     * Sort the events by its ocurring moments
+     * Sort the events by its occurring moments
      * to avoid the irrational events
      */
     private void organize(){
