@@ -20,21 +20,15 @@ public class Driver {
     }
 
     /**
-     * Sort the events by its occurring moments
-     * to avoid the irrational events
-     */
-    private void organize(){
-        Collections.sort((LinkedList<Event>)events);
-    }
-
-    /**
-     * Add/Insert an event to the queue (FIFO)
+     * Add/Insert an event to the queue (FIFO) and
+     * sort the events by its occurring moments to
+     * avoid the irrational events order
      *
      * @param event the event to add
      */
     public void addEvent(Event event) {
         events.offer(event);
-        organize();
+        Collections.sort((LinkedList<Event>) events);
     }
 
     /**
