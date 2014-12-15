@@ -24,7 +24,7 @@ public class Driver {
      * to avoid the irrational events
      */
     private void organize(){
-        Collections.sort((LinkedList)events);
+        Collections.sort((LinkedList<Event>)events);
     }
 
     /**
