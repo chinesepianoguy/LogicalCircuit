@@ -1,6 +1,6 @@
-package main.circuits;
+package circuits;
 
-import main.signals.Signal;
+import signals.Signal;
 
 /**
  * Created by King on 2014-12-12.

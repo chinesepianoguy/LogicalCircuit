@@ -1,4 +1,4 @@
-package main.signals;
+package signals;
 
 import java.util.LinkedList;
 import java.util.Queue;

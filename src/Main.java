@@ -1,6 +1,4 @@
-package main;
-
-import main.simulators.TestCircuit;
+import simulators.TestCircuit;
 
 public class Main {
 

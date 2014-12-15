@@ -1,8 +1,8 @@
-package main.simulators;
+package simulators;
 
-import main.signals.Event;
-import main.signals.Clock;
-import main.signals.Signal;
+import signals.Event;
+import signals.Clock;
+import signals.Signal;
 
 /**
  * Created by King on 2014-12-12.

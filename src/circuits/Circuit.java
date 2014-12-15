@@ -1,7 +1,7 @@
-package main.circuits;
+package circuits;
 
-import main.signals.Clock;
-import main.signals.Signal;
+import signals.Clock;
+import signals.Signal;
 
 import java.util.ArrayList;
 

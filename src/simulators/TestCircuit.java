@@ -1,11 +1,11 @@
-package main.simulators;
+package simulators;
 
-import main.circuits.And;
-import main.circuits.Circuit;
-import main.circuits.Gate;
-import main.circuits.Or;
-import main.signals.Event;
-import main.signals.Signal;
+import circuits.And;
+import circuits.Circuit;
+import circuits.Gate;
+import circuits.Or;
+import signals.Event;
+import signals.Signal;
 
 /**
  * Created by King on 2014-12-13.
