@@ -37,7 +37,7 @@ public class Driver {
      * @return the moment or -1 if the event queue is empty
      */
     public int timeOfEvent() {
-        return (events.peek() == null) ? -1 : events.peek().getTime();
+        return events.peek() != null ? events.peek().getTime() : -1;
     }
 
     /**
