@@ -16,7 +16,7 @@ public class Driver {
      * Initialize the queue of events (FIFO)
      */
     public Driver() {
-        events = new LinkedList<Event>();
+        events = new LinkedList<>();
     }
 
     /**

@@ -4,22 +4,23 @@ import signals.Clock;
 import signals.Event;
 import signals.Signal;
 
+import java.util.Set;
+
 /**
  * Created by King on 2014-12-13.
  */
-public class And extends GateWithTwoInputs {
+public class And extends Gate {
 
     /**
      * Constructor
      * Initialize the inputs, output and delay of this AND gate
      *
-     * @param input1 the first input
-     * @param input2 the second input
+     * @param inputs the inputs
      * @param output the output
      * @param delay  the delay
      */
-    public And(Signal input1, Signal input2, Signal output, int delay) {
-        super(input1, input2, output, delay);
+    public And(Set<Signal> inputs, Signal output, int delay) {
+        super(inputs, output, delay);
     }
 
     /**
@@ -27,13 +28,12 @@ public class And extends GateWithTwoInputs {
      */
     @Override
     public void activate() {
-        if (output.getValue() != input1.getValue() && input2.getValue()) {
-            output.addEvent(
-                    new Event(
-                            Clock.top() + delay,
-                            input1.getValue() && input2.getValue()
-                    )
-            );
+        boolean val = true;
+        for (Signal input : inputs) {
+            val = val && input.getValue();
+        }
+        if (output.getValue() != val) {
+            output.addEvent(new Event(Clock.top() + delay, val));
         }
     }
 

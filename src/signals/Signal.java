@@ -5,6 +5,7 @@ package signals;
  */
 public class Signal {
 
+    private String name;
     private boolean value;
     private Driver driver;
 
@@ -14,9 +15,19 @@ public class Signal {
      *
      * @param value the value of current stimuli
      */
-    public Signal(boolean value) {
+    public Signal(String name, boolean value) {
+        this.name = name;
         this.value = value;
         driver = new Driver();
+    }
+
+    /**
+     * Getter of name
+     *
+     * @return name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -42,6 +53,11 @@ public class Signal {
         if (driver.timeOfEvent() != -1 && driver.timeOfEvent() == Clock.top()) {
             value = driver.pollEvent().getValue();
         }
+    }
+
+    @Override
+    public String toString() {
+        return name + ": " + value;
     }
 
 }
