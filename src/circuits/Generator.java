@@ -39,6 +39,7 @@ public class Generator extends Gate {
         }
     }
 
+    @Override
     public String toString() {
         return "type: " + this.getClass().getSimpleName()
                 + "\toutput: " + output.getName()
