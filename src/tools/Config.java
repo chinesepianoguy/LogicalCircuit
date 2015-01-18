@@ -41,7 +41,7 @@ public class Config {
             Set<Signal> iss = new HashSet<>();
             Signal os;
             int delay;
-            switch (seg[0].split(":")[1].trim().toLowerCase()) {
+            switch (seg[0].split(":")[1].trim().toLowerCase()) { // JDK 1.7+ required!!!
                 case "and":
                     for (String s : seg[1].split(":")[1].split(",")) {
                         Signal is;
