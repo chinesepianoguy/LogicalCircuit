@@ -7,4 +7,4 @@ Programmation objet et Langage Java - TP 4~6
 
 Thanks to my friend Elias,
 I finally found it irrational to ignore sorting the events
-by its occuring moment before simulating them.
+by its occurring moment before simulating them.
